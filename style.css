@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -40,7 +43,7 @@ p.address {
 /* hero-banner  */
 .hero-banner {
   width: 100%;
-  height: 100vh;
+  height: 1080px;
   background-image: url(./image/banner.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -84,21 +87,18 @@ p.address {
   border-bottom: 1px solid #ccc;
   display: inline-block;
 }
-
 /* product-grid-tabs */
 .product {
-  margin: 0 255px;
-  margin-top: 100px;
+  max-width: 1410px;
+  margin: auto;
 }
-.product-grid-tabs {
-  margin: 0 255px;
-  margin-top: 100px;
-}
+
 .product-nav {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
   align-items: center;
+  margin-top: 100px;
 }
 .product-nav p {
   font-family: Lora;
@@ -189,7 +189,7 @@ li.first-item {
 
 .product-img img {
   width: 100%;
-  height: auto;
+  height: 460px;
 }
 .product-img {
   position: relative;
@@ -231,10 +231,31 @@ p.new {
   color: #fff;
   padding: 0 9px;
 }
-
+.navbar li {
+  cursor: pointer;
+}
+.navbar li.active {
+  color: black;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+.product-main {
+  display: none;
+}
+.product-main.active {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  row-gap: 30px;
+  column-gap: 10px;
+  grid-template-areas:
+    "item1 item1 item2 item3"
+    "item4 item5 item6 item6";
+}
 /* product slider  */
 .product-slider {
-  margin: 0 255px;
+  max-width: 1410px;
+  margin: auto;
 }
 /* .product_slider-main {
   display: grid;
@@ -297,10 +318,10 @@ p.new {
   }
 }
 
-/* book sale  */
 /* book-sale  */
 .book-sale {
-  margin: 0 255px;
+  max-width: 1410px;
+  margin: auto;
 }
 .book-container {
   display: grid;
@@ -341,11 +362,10 @@ p.new {
   line-height: 24px;
   text-align: center;
 }
-
 /* inspiration  */
 .inspiration {
-  margin: 0 255px;
-  margin-bottom: 100px;
+  max-width: 1410px;
+  margin: auto;
 }
 .inspiration-container {
   display: grid;
@@ -367,9 +387,9 @@ p.new {
   font-weight: 400;
   line-height: 24px;
 }
-
 /* single banner  */
 .single-banner {
+  margin-top: 100px;
   position: relative;
   background-image: url("./image/single-banner.png");
   background-size: cover;
@@ -413,8 +433,11 @@ p.new {
   line-height: 24px;
   text-align: center;
 }
+/* our service  */
 .our-service {
-  margin: 80px 255px;
+  padding: 80px 0;
+  max-width: 1410px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   gap: 60px;
@@ -435,7 +458,6 @@ p.new {
 .service-icon {
   margin-bottom: 24px;
 }
-
 /* contact shop  */
 
 .contact-shop {
@@ -450,27 +472,27 @@ p.new {
 }
 .contact-item1 {
   position: absolute;
-  left: 283px;
+  left: 243px;
   top: 50.7px;
 }
 .contact-item2 {
   position: absolute;
-  left: 220px;
+  left: 180px;
   top: 290px;
 }
 .contact-item3 {
   position: absolute;
-  left: 429px;
+  left: 389px;
   top: 454px;
 }
 .contact-item4 {
   position: absolute;
-  right: 221px;
+  right: 181px;
   top: 70px;
 }
 .contact-item5 {
   position: absolute;
-  right: 400px;
+  right: 320px;
   top: 405px;
 }
 .contact-mid {
@@ -503,6 +525,8 @@ p.new {
   line-height: 30px;
   text-align: center;
 }
+
+/* footer  */
 .footer {
   width: 100%;
   height: 306px;
@@ -559,7 +583,8 @@ p.new {
   color: white;
 }
 
-/* responsive  */
+/* responsive for mobile  */
+
 @media only screen and (max-width: 768px) {
   .header-top {
     width: 100%; /* Điều chỉnh kích thước phù hợp */
@@ -590,23 +615,28 @@ p.new {
   header .splide__arrow {
     background: #000;
   }
+  // hero banner
+  .hero-banner {
+    height: 600px;
+  }
 
   //products grid
   .product {
     margin: 0 15px;
-}
+  }
   .product-nav {
     display: flex;
     flex-direction: column;
   }
   .navbar {
     gap: 20px;
+    flex-wrap: wrap;
   }
   .product-nav p {
     margin-bottom: 32px;
     margin-top: 47px;
   }
-  .product-main {
+  .product-main.active {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto auto auto;
@@ -766,6 +796,7 @@ p.new {
   }
   .footer-content h2 {
     text-align: left;
+    font-size: 24px;
   }
   .footer-content h3 {
     text-align: left;

@@ -28,3 +28,32 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   }).mount();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navbarItems = document.querySelectorAll(".navbar li");
+  const productMains = document.querySelectorAll(".product-main");
+
+  navbarItems.forEach(item => {
+    item.addEventListener("click", () => {
+      // Remove 'active' from all navbar items
+      navbarItems.forEach(nav => nav.classList.remove("active"));
+      // Add 'active' to clicked navbar item
+      item.classList.add("active");
+
+      // Get the selected category
+      const category = item.getAttribute("data-category");
+
+      // Show only the product-main that matches the category
+      productMains.forEach(main => {
+        if (main.getAttribute("data-category") === category) {
+          main.classList.add("active");
+        } else {
+          main.classList.remove("active");
+        }
+      });
+    });
+  });
+
+  // Set default active product-main
+  document.querySelector(".product-main").classList.add("active");
+});
