@@ -142,7 +142,7 @@ li.first-item {
 .product-content b {
   font-family: Poppins;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 25.88px;
   color: #000000;
   margin: 4px 0;
@@ -161,7 +161,7 @@ li.first-item {
 .price-container .price {
   font-family: Poppins;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 22.5px;
   color: #d63a2f;
 }
@@ -466,33 +466,37 @@ p.new {
   background: #f6f2ee;
   height: 752px;
 }
+.contact-shop img {
+  max-width: 100%;
+  max-height: 100%;
+}
 .contact-left,
 .contact-right {
   position: relative;
 }
 .contact-item1 {
   position: absolute;
-  left: 243px;
+  left: 44.2%;
   top: 50.7px;
 }
 .contact-item2 {
   position: absolute;
-  left: 180px;
+  left: 34.4%;
   top: 290px;
 }
 .contact-item3 {
   position: absolute;
-  left: 389px;
+  left: 67%;
   top: 454px;
 }
 .contact-item4 {
   position: absolute;
-  right: 181px;
+  right: 34.6%;
   top: 70px;
 }
 .contact-item5 {
   position: absolute;
-  right: 320px;
+  right: 62.6%;
   top: 405px;
 }
 .contact-mid {
@@ -583,23 +587,51 @@ p.new {
   color: white;
 }
 
+/* responsive for table  */
+@media only screen and (max-width: 768px) {
+  p.address {
+    float: none;
+  }
+  .product-nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .product-main.active {
+    padding: 0 10px;
+  }
+  .product-slider {
+    padding: 0 10px;
+  }
+  .book-sale {
+    padding: 0 10px;
+  }
+  .book-container {
+    gap: 20px;
+  }
+  .text-sale {
+    font-size: 36px;
+    margin-top: 50px;
+    padding: 0 10px;
+    line-height: 54px;
+  }
+  .inspiration-container {
+    gap: 62px;
+    overflow-x: auto;
+  }
+  .contact-shop img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
 /* responsive for mobile  */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 425px) {
   .header-top {
     width: 100%; /* Điều chỉnh kích thước phù hợp */
     margin: auto;
   }
-  .product {
-    margin: 0 15px;
-  }
-  .banner-content h2 {
-    font-family: Lora;
-    font-size: 56px;
-  }
-  .text-deco {
-    font-size: 16px !important;
-  }
+
   p.address {
     float: none;
     padding: 0;
@@ -615,22 +647,30 @@ p.new {
   header .splide__arrow {
     background: #000;
   }
-  // hero banner
+  /* hero banner  */
+
   .hero-banner {
     height: 600px;
   }
-
-  //products grid
+  .banner-content h2 {
+    font-family: Lora;
+    font-size: 56px;
+  }
+  /* products grid  */
   .product {
     margin: 0 15px;
   }
   .product-nav {
     display: flex;
     flex-direction: column;
+    margin-top: 0;
   }
   .navbar {
     gap: 20px;
     flex-wrap: wrap;
+  }
+  .text-deco {
+    font-size: 16px !important;
   }
   .product-nav p {
     margin-bottom: 32px;
@@ -648,6 +688,8 @@ p.new {
       "item4 item5"
       "item6 item6";
   }
+
+  /* product slider  */
   .product-slider {
     margin: 0 15px;
   }
@@ -776,7 +818,7 @@ p.new {
   }
 
   .price {
-    font-weight: bold;
+    font-weight: 500;
   }
   .contact-shop img {
     width: 109px;

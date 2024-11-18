@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Header Slider Configuration
   new Splide("header .splide", {
-    type: "",
+    type: "slide",
     perPage: 2, 
     autoplay: false, 
     arrows: false,
