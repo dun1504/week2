@@ -10,7 +10,152 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+.popup-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Thay $background bằng màu thích hợp */
+  position: absolute;
+  height: 100vh;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width: 100vw;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 99999999999999;
+}
 
+.popup-overlay .popup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 420px;
+  width: 900px;
+}
+
+.popup-overlay .popup-wrapper .popup-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-top: 6px;
+}
+
+.popup-overlay .popup-wrapper .popup-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: #fff; /* Thay $color-white bằng mã màu trắng */
+  position: relative;
+}
+
+.popup-overlay .popup-wrapper .popup-content h3,
+.popup-overlay .popup-wrapper .popup-content h2 {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  text-align: center;
+  line-height: 56px;
+}
+
+.popup-overlay .popup-wrapper .popup-content h3 {
+  font-size: 34px;
+}
+
+.popup-overlay .popup-wrapper .popup-content h2 {
+  font-size: 36px;
+  width: 300px;
+  margin: 0 70px;
+}
+
+.popup-overlay .popup-wrapper .popup-content p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  width: 200px;
+  margin-top: 20px;
+}
+
+.popup-overlay .popup-content .icon-popup,
+.popup-overlay .popup-content .icon-popup-fetch {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+
+.popup-overlay .popup-content .icon-popup i,
+.popup-overlay .popup-content .icon-popup-fetch i {
+  font-size: 36px;
+}
+
+/* Popup success and error */
+.popup-success,
+.popup-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Thay $background bằng màu thích hợp */
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+}
+
+.popup-success .popup-wrapper,
+.popup-error .popup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 192px;
+  width: 900px;
+  background: #fff; /* Thay $color-white bằng mã màu trắng */
+}
+
+.popup-success .popup-wrapper h1,
+.popup-error .popup-wrapper h1,
+.popup-success .popup-wrapper p,
+.popup-error .popup-wrapper p {
+  font-family: 'Lora', serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 56px;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.popup-success .popup-content .icon-popup-fetch,
+.popup-error .popup-content .icon-popup-fetch {
+  position: absolute;
+  top: -26%;
+  right: 2%;
+}
+
+.popup-success .popup-content .icon-popup-fetch i,
+.popup-error .popup-content .icon-popup-fetch i {
+  font-size: 36px;
+}
+
+/* Active states */
+.popup-success.action,
+.popup-error.action {
+  visibility: visible;
+  opacity: 1;
+}
+.icon-popup-fecth {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+}
 header {
   width: 100%;
   height: 78px;
