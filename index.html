@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="./style.css" />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
@@ -29,6 +33,24 @@
         <p>ORANGY</p>
       </div>
     </header>
+    <div class="popups-sale">
+      <div class="sale-banner">
+        <div class="sale-banner__image">
+          <img src="./image/popup-01.png" alt="Sale banner" />
+        </div>
+        <div class="sale-banner__content">
+          <button class="sale-banner__close">&times;</button>
+          <div class="sale-content-top">
+            <h3>Big Sale</h3>
+            <h2>Up to 50% Off <br>Black Friday</h2>
+          </div>
+          <div class="sale-content-bottom">
+            <p>Applicable to all products<br />from Nov 25 to Nov 29</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="hero-banner">
       <div class="banner-content">
         <h2>EMBRACE VISION</h2>
@@ -466,6 +488,7 @@
     <div class="text-carousel">
       <p>FIND INSPIRATION * DESIGN FOR LIVING * UNIQUE FURNITURE</p>
     </div>
+    <!-- box-sale  -->
     <div class="book-sale">
       <div class="book-container">
         <div class="book-img">
@@ -486,6 +509,72 @@
           <img src="./image/book3.png" alt="" />
         </div>
       </div>
+    </div>
+    <!-- contact us  -->
+    <div class="form-container">
+      <h2>Contact us to order and receive purchase advice</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <div class="form-field">
+            <label for="name">Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            />
+          </div>
+          <div class="form-field">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-field">
+            <label for="phone">Phone *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Phone"
+              pattern="[\d\s\-\+]+"
+              required
+            />
+          </div>
+          <div class="form-field">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Address"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Your message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Example: I want to buy 6 chairs and a table brand Oda ottoman..."
+          ></textarea>
+        </div>
+        <!-- Google reCaptcha -->
+        <div
+          class="g-recaptcha"
+          data-sitekey="6LcoR4wqAAAAAM-4aXfhQNJaitykm9aHkGzc-Gbt"
+        ></div>
+
+        <button type="submit" class="submit-btn">SUBMIT NOW</button>
+        <p class="required-note">* Required</p>
+      </form>
     </div>
 
     <!-- inspiration  -->
@@ -545,6 +634,125 @@
               personalized craftsmanship and design solutions.
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- faq  -->
+    <div class="faq">
+      <div class="faq-head">
+        <h1>FAQs on Design & Development</h1>
+      </div>
+      <div class="faq-main">
+        <div class="faq-container">
+          <!-- Existing FAQ boxes -->
+          <div class="faq-box">
+            <div class="faq-title">
+              <h3>How long does shipping take?</h3>
+              <div class="faq-icon">
+                <i id="plus" class="fa-solid fa-plus"></i>
+                <i id="minus" class="fa-solid fa-minus"></i>
+              </div>
+            </div>
+            <div class="faq-content">
+              <ul>
+                <li>
+                  Your sales managers will go into the field feeling energized,
+                  excited, and inspired.
+                </li>
+                <li>
+                  We are a full service business development group – we build
+                  strategies and systems.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq-box">
+            <div class="faq-title">
+              <h3>Does my piece come in any packaging?</h3>
+              <div class="faq-icon">
+                <i id="plus" class="fa-solid fa-plus"></i>
+                <i id="minus" class="fa-solid fa-minus"></i>
+              </div>
+            </div>
+            <div class="faq-content">
+              <ul>
+                <li>
+                  Yes, all our products come in protective and aesthetically
+                  pleasing packaging to ensure they arrive in perfect condition.
+                  Each product is securely wrapped, and we use eco-friendly
+                  materials whenever possible.
+                </li>
+                <li>
+                  Additionally, many of our products come in recyclable
+                  containers to support sustainability.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq-box">
+            <div class="faq-title">
+              <h3>Do you ship internationally?</h3>
+              <div class="faq-icon">
+                <i id="plus" class="fa-solid fa-plus"></i>
+                <i id="minus" class="fa-solid fa-minus"></i>
+              </div>
+            </div>
+            <div class="faq-content">
+              <ul>
+                <li>
+                  Yes, we do ship internationally! We offer worldwide shipping
+                  to ensure customers around the globe can enjoy our products.
+                  Please note that shipping times and costs may vary depending
+                  on the destination country.
+                </li>
+                <li>
+                  International customers may also be subject to customs fees or
+                  import duties imposed by their country's customs authorities.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-box">
+            <div class="faq-title">
+              <h3>What payment methods do you accept?</h3>
+              <div class="faq-icon">
+                <i id="plus" class="fa-solid fa-plus"></i>
+                <i id="minus" class="fa-solid fa-minus"></i>
+              </div>
+            </div>
+            <div class="faq-content">
+              <ul>
+                <li>
+                  We accept a variety of payment methods to make your shopping
+                  experience convenient. These include credit cards (Visa,
+                  Mastercard, American Express), PayPal, and, in some regions,
+                  alternative payment methods such as Apple Pay or Google Pay.
+                  Rest assured, your payment information is secure and protected
+                  during the checkout process.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq-box">
+            <div class="faq-title">
+              <h3>What should I do if my order is not placed?</h3>
+              <div class="faq-icon">
+                <i id="plus" class="fa-solid fa-plus"></i>
+                <i id="minus" class="fa-solid fa-minus"></i>
+              </div>
+            </div>
+            <div class="faq-content">
+              <ul>
+                <li>
+                  We’re sorry to hear that you’re unable to place an order.
+                  Please contact Customer Service and we will work on resolving
+                  the issue as quickly as possible
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- More boxes ... -->
         </div>
       </div>
     </div>
@@ -639,8 +847,14 @@
         <h3>Subscribe for store updates and discounts.</h3>
       </div>
       <div class="input">
-        <input type="text" placeholder="Email" />
-        <img src="./image/right.png" alt="" />
+        <input type="email" id="email" placeholder="Email" />
+        <div type="submit" id="submit-btn">
+          <img src="./image/right.png" alt="Submit" />
+        </div>
+      </div>
+      <div id="popup" class="popup">
+        <div id="popup-message" class="popup-message"></div>
+        <button onclick="closePopup()">Close</button>
       </div>
       <div class="social-icon">
         <img src="./image/facebook.png" alt="" />
@@ -654,6 +868,18 @@
         <p>© 2024 <a href="https://www.wgentech.com/">ORANGY</a></p>
       </div>
     </div>
+    <!-- cookie bar  -->
+    <div id="cookie-bar" class="cookie-bar">
+      <p>
+        This website uses cookies to ensure you get the best experience on our
+        website.
+      </p>
+      <div class="cookie-status">
+        <button id="accept-cookies" class="accept">Accept</button>
+        <button id="dismiss-cookies" class="ignore">Ignore</button>
+      </div>
+    </div>
     <script src="./main.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
   </body>
 </html>
