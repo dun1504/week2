@@ -89,53 +89,6 @@ titles.forEach((title, i) => {
 });
 
 // submit form 
-document.getElementById('contactForm').addEventListener('submit', async function (e) {
-  e.preventDefault(); // Ngăn hành vi submit mặc định
-
-  // Kiểm tra reCaptcha
-  const captchaResponse = grecaptcha.getResponse();
-  if (!captchaResponse) {
-    showPopup('Please complete the reCaptcha verification.');
-    return;
-  }
-
-  // Lấy dữ liệu từ form
-  const body = JSON.stringify({
-    name: document.getElementById('name').value.trim(),
-    email: document.getElementById('email').value.trim(),
-    phone: document.getElementById('phone').value.trim(),
-    address: document.getElementById('address').value.trim(),
-    message: document.getElementById('message').value.trim(),
-    captcha: captchaResponse
-  });
-
-  try {
-    const response = await fetch('https://testapi.demo.wgentech.com/notify.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: body,
-      keepalive: true
-    });
-
-    const result = await response.json();
-    showPopup(result.message || 'Your message has been sent successfully!');
-
-    // Reset form nếu thành công
-    if (result.success) {
-      document.getElementById('contactForm').reset();
-      grecaptcha.reset(); // Reset reCaptcha
-    }
-  } catch (error) {
-    console.error('Error:', error);
-    showPopup('An error occurred. Please try again later.');
-  }
-});
-
-// Hàm hiển thị popup thông báo
-function showPopup(message) {
-  alert(message); // Thay bằng modal/popup nếu cần
-}
-
 
 // push email 
 // Hàm kiểm tra email hợp lệ
