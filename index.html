@@ -42,7 +42,7 @@
           <button class="sale-banner__close">&times;</button>
           <div class="sale-content-top">
             <h3>Big Sale</h3>
-            <h2>Up to 50% Off <br>Black Friday</h2>
+            <h2>Up to 50% Off <br />Black Friday</h2>
           </div>
           <div class="sale-content-bottom">
             <p>Applicable to all products<br />from Nov 25 to Nov 29</p>
@@ -58,6 +58,7 @@
         <p class="text-deco">EXPLORE NOW</p>
       </div>
     </div>
+    <!-- product grid tabs  -->
     <div class="product">
       <div class="product-nav">
         <p>Our picks for you</p>
@@ -512,7 +513,7 @@
     </div>
     <!-- contact us  -->
     <div class="form-container">
-      <h2>Contact us to order and receive purchase advice</h2>
+      <h2>Contact us to order and <br> receive purchase advice</h2>
       <form id="contactForm">
         <div class="form-group">
           <div class="form-field">
@@ -558,7 +559,7 @@
             />
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-group group-message">
           <label for="message">Your message</label>
           <textarea
             id="message"
@@ -572,8 +573,10 @@
           data-sitekey="6LcoR4wqAAAAAM-4aXfhQNJaitykm9aHkGzc-Gbt"
         ></div>
 
-        <button type="submit" class="submit-btn">SUBMIT NOW</button>
-        <p class="required-note">* Required</p>
+        <div class="form-bottom">
+          <button type="submit" class="submit-btn">SUBMIT NOW</button>
+          <p class="required-note">* Required</p>
+        </div>
       </form>
     </div>
 
@@ -838,6 +841,20 @@
         <div class="contact-item5">
           <img src="./image/contact5.png" alt="" />
         </div>
+      </div>
+    </div>
+    <div id="popupSuccess" style="display:none;">
+      <div class="popup-content">
+        <p>Form submitted successfully!</p>
+        <button id="closePopupSuccess">Close</button>
+      </div>
+    </div>
+    
+    <!-- Popup error -->
+    <div id="popupError" style="display:none;">
+      <div class="popup-content">
+        <p>Error submitting the form. Please try again!</p>
+        <button id="closePopupError">Close</button>
       </div>
     </div>
     <!-- footer  -->
