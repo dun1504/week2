@@ -90,6 +90,97 @@ titles.forEach((title, i) => {
 
 // submit form 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const formEl = document.querySelector("#contactForm");
+  const nameInput = formEl.querySelector("#name");
+  const emailInput = formEl.querySelector("#email");
+  const phoneInput = formEl.querySelector("#phone");
+  const addressInput = formEl.querySelector("#address");
+  const messageInput = formEl.querySelector("#message");
+
+  const popupSuccess = document.querySelector(".popup-success");
+  const popupError = document.querySelector(".popup-error");
+  const closeButtons = document.querySelectorAll(".icon-popup-fecth");
+
+  // Gắn sự kiện đóng popup một lần duy nhất
+
+  // Hàm kiểm tra định dạng email
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  formEl.addEventListener("submit", (event) => {
+    event.preventDefault(); // Ngăn form reload trang
+
+    // Kiểm tra trường bắt buộc
+    if (
+      !nameInput.value.trim() ||
+      !emailInput.value.trim() ||
+      !phoneInput.value.trim()
+    ) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // Kiểm tra định dạng email
+    if (!isValidEmail(emailInput.value.trim())) {
+      alert("Invalid email format.");
+      emailInput.focus();
+      return;
+    }
+
+    const formData = {
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      phone: phoneInput.value.trim(),
+      address: addressInput.value.trim(),
+      message: messageInput.value.trim(),
+    };
+
+    // Gửi dữ liệu qua fetch
+    fetch("https://testapi.demo.wgentech.com/notify.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data.success) {
+          showPopupSuccess();
+        } else {
+          showPopupError();
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        showPopupError();
+      });
+  });
+
+  // Hàm hiển thị popup thành công
+  function showPopupSuccess() {
+    popupSuccess.classList.add("action");
+  }
+
+  // Hàm hiển thị popup lỗi
+  function showPopupError() {
+    popupError.classList.add("action");
+  }
+  closeButtons.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      popupSuccess.classList.remove("action");
+      popupError.classList.remove("action");
+    })
+  );
+});
 // push email 
 // Hàm kiểm tra email hợp lệ
 function validateEmail(email) {
