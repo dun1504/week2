@@ -13,10 +13,10 @@
   background: rgba(0, 0, 0, 0.5); /* Thay $background bằng màu thích hợp */
   position: absolute;
   height: 100vh;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100vw;
   visibility: hidden;
   opacity: 0;
@@ -52,7 +52,7 @@
 
 .popup-overlay .popup-wrapper .popup-content h3,
 .popup-overlay .popup-wrapper .popup-content h2 {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   font-weight: 400;
   text-align: center;
   line-height: 56px;
@@ -69,7 +69,7 @@
 }
 
 .popup-overlay .popup-wrapper .popup-content p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -120,7 +120,7 @@
 .popup-error .popup-wrapper h1,
 .popup-success .popup-wrapper p,
 .popup-error .popup-wrapper p {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 56px;
@@ -587,7 +587,7 @@ p.new {
 }
 
 .form-container h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 36px;
   font-weight: 400;
   text-align: center;
@@ -629,7 +629,7 @@ p.new {
 }
 
 .form-container .form-field label {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   font-size: 16px;
   margin-bottom: 8px;
 }
@@ -640,7 +640,7 @@ p.new {
   border: 1px solid #ccc;
   border-radius: 1px;
   font-size: 16px;
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   width: 100%;
 }
 
@@ -657,7 +657,7 @@ p.new {
 .form-container .submit-btn {
   background-color: #000;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
   padding: 15px 30px;
@@ -674,7 +674,7 @@ p.new {
 }
 
 .form-container .required-note {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   color: #888;
   text-align: center;
@@ -1468,7 +1468,6 @@ button#dismiss-cookies {
   }
   /* cookie bar  */
   .cookie-bar {
-
   }
   .cookie-status {
     margin: auto;
@@ -1478,5 +1477,8 @@ button#dismiss-cookies {
   }
   .faq {
     margin: 0 15px;
-}
+  }
+  .form-container h2 {
+    font-size: 26px;
+  }
 }
