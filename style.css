@@ -1476,4 +1476,7 @@ button#dismiss-cookies {
     gap: 0;
     width: 100%;
   }
+  .faq {
+    margin: 0 15px;
+}
 }
