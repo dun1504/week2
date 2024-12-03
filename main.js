@@ -96,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const phoneInput = formEl.querySelector("#phone");
   const addressInput = formEl.querySelector("#address");
   const messageInput = formEl.querySelector("#message");
-
   const popupSuccess = document.querySelector(".popup-success");
   const popupError = document.querySelector(".popup-error");
   const closeButtons = document.querySelectorAll(".icon-popup-fecth");
@@ -138,6 +137,19 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Gửi dữ liệu qua fetch
+    // fetch('https://testapi.demo.wgentech.com/notify.php',
+    //   {
+    //   body,
+    //   method: 'POST',
+    //   keepalive: true
+    //   })
+    // .then(response => response.json())
+    // .then(data => {
+    // console.log(data);
+    // })
+    // .catch(error => {
+    // console.error('Error:', error);
+    // });
     fetch('https://testapi.demo.wgentech.com/notify.php',
       {
       body: JSON.stringify(formData),
@@ -154,12 +166,30 @@ document.addEventListener("DOMContentLoaded", () => {
         showPopupError();
       });
 
-  // Hàm hiển thị popup thành công
+    // .then((response) => {
+    //   if (!response.ok) {
+    //     throw new Error("Network response was not ok");
+    //   }
+    //   return response.json();
+    // })
+
+    // .then((data) => {
+    //   if (data.success) {
+    //     showPopupSuccess();
+    //   } else {
+    //     showPopupError();
+    //   }
+    // })
+    // .catch((error) => {
+    //   console.error("Error:", error);
+    //   showPopupError();
+    // });
+  });
+
   function showPopupSuccess() {
     popupSuccess.classList.add("action");
   }
 
-  // Hàm hiển thị popup lỗi
   function showPopupError() {
     popupError.classList.add("action");
   }
@@ -172,29 +202,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // push email
-// Hàm kiểm tra email hợp lệ
 function validateEmail(email) {
-  console.log("Đang kiểm tra email: ", email); // In email ra console để kiểm tra
+  console.log("Đang kiểm tra email: ", email);
 
-  // Biểu thức chính quy kiểm tra email
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailPattern.test(email);
 }
 
-// Hàm gửi yêu cầu fetch tới Google Sheets
 async function submitEmail() {
   const emailInput = document.getElementById("email");
-  const email = emailInput.value.trim(); // Xóa khoảng trắng ở đầu/cuối email
+  const email = emailInput.value.trim();
 
-  console.log("Email lấy từ input: ", email); // Kiểm tra giá trị email lấy từ input
+  console.log("Email lấy từ input: ", email);
 
-  // Kiểm tra email hợp lệ
   if (!validateEmail(email)) {
     showPopup("Thank you!Data has been sent successfully.");
     return;
   }
 
-  // Gửi dữ liệu đến Google Sheets qua Google Apps Script
   try {
     const response = await fetch(
       "https://script.google.com/macros/s/AKfycbwlnruolAEFek8x1wUYLxocHdIuwHWrHYXSfzSXZSygslzejM-ppDe76EuK8jkKWyB4/exec",
@@ -219,7 +244,6 @@ async function submitEmail() {
   }
 }
 
-// Hàm hiển thị thông báo trong popup
 function showPopup(message) {
   const popup = document.getElementById("popup");
   const popupMessage = document.getElementById("popup-message");
@@ -227,23 +251,20 @@ function showPopup(message) {
   popup.style.display = "block";
 }
 
-// Hàm đóng popup
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
 
-// Lắng nghe sự kiện submit (click button)
 document
   .getElementById("submit-btn")
   .addEventListener("click", function (event) {
-    event.preventDefault(); // Ngừng hành động submit mặc định
+    event.preventDefault();
     submitEmail();
   });
 
-// Lắng nghe sự kiện nhấn Enter trong input email
 document.getElementById("email").addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
-    event.preventDefault(); // Ngừng hành động mặc định khi nhấn Enter
+    event.preventDefault();
     submitEmail();
   }
 });
