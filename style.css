@@ -553,7 +553,9 @@ header .header-main {
 }
 .form-container form .form-field textarea {
   height: 150px;
-  resize: vertical;
+  resize: none;
+  overflow: auto;
+  padding: 15px;
 }
 .form-container form .g-recaptcha {
   width: 100%;
