@@ -138,31 +138,21 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Gửi dữ liệu qua fetch
-    fetch("https://testapi.demo.wgentech.com/notify.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+    fetch('https://testapi.demo.wgentech.com/notify.php',
+      {
       body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
+      method: 'POST',
+      keepalive: true
       })
+      .then((response) => response.json())
       .then((data) => {
-        if (data.success) {
-          showPopupSuccess();
-        } else {
-          showPopupError();
-        }
+        console.log(data);
+        showPopupSuccess();
       })
       .catch((error) => {
         console.error("Error:", error);
         showPopupError();
       });
-  });
 
   // Hàm hiển thị popup thành công
   function showPopupSuccess() {
