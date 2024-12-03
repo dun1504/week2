@@ -100,6 +100,7 @@
   position: fixed;
   height: 100vh;
   width: 100vw;
+  top: 0;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s, visibility 0.3s;
@@ -130,9 +131,8 @@
 
 .popup-success .popup-content .icon-popup-fetch,
 .popup-error .popup-content .icon-popup-fetch {
-  position: absolute;
-  top: -26%;
-  right: 2%;
+  float: right;
+  cursor: pointer;
 }
 
 .popup-success .popup-content .icon-popup-fetch i,
@@ -1479,6 +1479,16 @@ button#dismiss-cookies {
     margin: 0 15px;
   }
   .form-container h2 {
+    font-size: 26px;
+  }
+  .popup-success .popup-content .icon-popup-fetch,
+  .popup-error .popup-content .icon-popup-fetch {
+    cursor: pointer;
+    float: right;
+    padding-right: 10px;
+  }
+  .popup-success .popup-content .icon-popup-fetch i,
+  .popup-error .popup-content .icon-popup-fetch i {
     font-size: 26px;
   }
 }

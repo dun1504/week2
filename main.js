@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageInput = formEl.querySelector("#message");
   const popupSuccess = document.querySelector(".popup-success");
   const popupError = document.querySelector(".popup-error");
-  const closeButtons = document.querySelectorAll(".icon-popup-fecth");
+  const closeButtons = document.querySelectorAll(".icon-popup-fetch");
 
   // Gắn sự kiện đóng popup một lần duy nhất
 
